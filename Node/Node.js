@@ -27,7 +27,6 @@ strawberryNode.setNextNode(coconutNode)
 let currentNode = vanillaNode
 
 while (currentNode !== null) {
-    console.log(currentNode.data)
     currentNode = currentNode.getNextNode()
 }
 
