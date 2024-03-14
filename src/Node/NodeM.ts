@@ -1,4 +1,4 @@
-export class NodeM {
+ class NodeM {
     data : string
     next : NodeM | null
     previous : NodeM | null
@@ -33,3 +33,4 @@ export class NodeM {
 }
 
 
+module.exports = NodeM;

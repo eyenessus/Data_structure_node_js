@@ -1,6 +1,4 @@
-import { NodeM } from '../Node/NodeM';
-
-export class LinkedList {
+ class LinkedList {
   head: NodeM | null
   constructor() {
     this.head = null;
