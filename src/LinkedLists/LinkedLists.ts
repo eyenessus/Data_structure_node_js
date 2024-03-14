@@ -1,11 +1,13 @@
+import { NodeM } from "../Node/NodeM";
 
 export class LinkedList {
+  head: NodeM | null
   constructor() {
     this.head = null;
   }
 
-  addToHead(data) {
-    const newHead = new Node(data);
+  addToHead(data: NodeM) {
+    const newHead = new NodeM(data);
     const currentHead = this.head;
     this.head = newHead;
     if (currentHead) {
@@ -13,15 +15,17 @@ export class LinkedList {
     }
   }
 
-  addToTail(data) {
-    let tail = this.head;
+  addToTail(data: NodeM) {
+    let tail: NodeM | null = this.head;
     if (!tail) {
-      this.head = new Node(data);
+      this.head = new NodeM(data);
     } else {
-      while (tail.getNextNode() !== null) {
+      while (tail !== null && tail.getNextNode() !== null) {
         tail = tail.getNextNode();
       }
-      tail.setNextNode(new Node(data));
+      if (tail !== null) {
+        tail.setNextNode(new NodeM(data));
+      }
     }
   }
 
@@ -46,4 +50,3 @@ export class LinkedList {
   }
 }
 
-module.exports = LinkedList;
