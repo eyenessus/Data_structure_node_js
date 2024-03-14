@@ -1,14 +1,17 @@
+import { LinkedList } from "../LinkedLists/LinkedLists"
+import { NodeM } from "../Node/NodeM"
+
 /**
  * NODE
  */
-const strawberryNode = new Node('Berry Tasty')
-const vanillaNode = new Node('Vanilla')
-const coconutNode = new Node('Coconuts for Coconut')
+const strawberryNode = new NodeM('Berry Tasty')
+const vanillaNode = new NodeM('Vanilla')
+const coconutNode = new NodeM('Coconuts for Coconut')
 
 vanillaNode.setNextNode(strawberryNode)
 strawberryNode.setNextNode(coconutNode)
 
-let currentNode = vanillaNode
+let currentNode :NodeM| null = vanillaNode
 
 while (currentNode !== null) {
     currentNode = currentNode.getNextNode()

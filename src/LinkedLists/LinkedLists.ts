@@ -6,7 +6,7 @@ export class LinkedList {
     this.head = null;
   }
 
-  addToHead(data: NodeM) {
+  addToHead(data: string) {
     const newHead = new NodeM(data);
     const currentHead = this.head;
     this.head = newHead;
@@ -15,7 +15,7 @@ export class LinkedList {
     }
   }
 
-  addToTail(data: NodeM) {
+  addToTail(data: string) {
     let tail: NodeM | null = this.head;
     if (!tail) {
       this.head = new NodeM(data);

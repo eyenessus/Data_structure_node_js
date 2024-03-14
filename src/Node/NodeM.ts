@@ -1,8 +1,8 @@
 export class NodeM {
-    data : NodeM
+    data : string
     next : NodeM | null
 
-    constructor(data:NodeM) {
+    constructor(data:string) {
         this.data = data;
         this.next = null;
     }
