@@ -1,4 +1,4 @@
-import { NodeM } from "../Node/NodeM";
+import { NodeM } from '../Node/NodeM';
 
 export class LinkedList {
   head: NodeM | null
@@ -39,8 +39,9 @@ export class LinkedList {
   }
 
   printList() {
-    let currentNode = this.head;
-    let output = "<head> ";
+    let currentNode: null | NodeM = this.head;
+    let output: string = "<head> ";
+    
     while (currentNode !== null) {
       output += currentNode.data + " ";
       currentNode = currentNode.getNextNode();
