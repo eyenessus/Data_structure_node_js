@@ -1,3 +1,4 @@
+
 interface IDoublyLinkedList{
     head: INode | null;
     tail: INode | null;
@@ -6,5 +7,5 @@ interface IDoublyLinkedList{
     removeHead(): string | void;
     removeTail(): string | void;
     removeByData(data: string): INode | null;
-    swapNodes(list:IDoublyLinkedList,data1:INode|null,data2:INode|null) :INode| null;
+    swapNodes(list:IDoublyLinkedList,data1:string,data2:string) :INode| null;
 }
