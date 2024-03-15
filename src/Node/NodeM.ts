@@ -1,9 +1,9 @@
 export default class NodeM implements INode{
-    data: string
+    data: any
     next: INode | null
     previous: INode | null
     
-    constructor(data: string) {
+    constructor(data: any) {
         this.data = data;
         this.next = null;
         this.previous = null;

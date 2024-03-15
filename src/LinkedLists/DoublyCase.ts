@@ -14,4 +14,4 @@ brazilSubway.addToHead('Capão redondo')
 brazilSubway.addToTail('Vila das belezas')
 brazilSubway.addToTail('Santa cruz')
 
-subway.swapNodes(brazilSubway,'google','pop')
+// subway.swapNodes(brazilSubway,'google','pop')

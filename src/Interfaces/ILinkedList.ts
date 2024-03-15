@@ -1,7 +1,7 @@
 interface ILinkedList{
     head: INode | null;
-    addToHead(data: string): void;
-    addToTail(data: string): void;
+    addToHead(data: any): void;
+    addToTail(data: any): void;
     removeHead(): string | void;
     printList(): void;
 }

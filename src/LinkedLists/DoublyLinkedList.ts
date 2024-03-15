@@ -9,7 +9,7 @@ export default class DoublyLinkedList implements IDoublyLinkedList {
     this.tail = null;
   }
 
-  addToHead(data: string) {
+  addToHead(data: any) {
     const newHead = new NodeM(data);
     const currentHead = this.head;
     if (currentHead) {
@@ -22,7 +22,7 @@ export default class DoublyLinkedList implements IDoublyLinkedList {
     }
   }
 
-  addToTail(data: string) {
+  addToTail(data: any) {
     const newTail = new NodeM(data);
     const currentTail = this.tail;
     if (currentTail) {
@@ -65,7 +65,7 @@ export default class DoublyLinkedList implements IDoublyLinkedList {
     return removedTail.data;
   }
 
-  removeByData(data: string) {
+  removeByData(data: any) {
     let nodeToRemove;
     let currentNode = this.head;
     while (currentNode !== null) {
@@ -106,7 +106,7 @@ export default class DoublyLinkedList implements IDoublyLinkedList {
 
 }
 
-function swapNodes(list: IDoublyLinkedList, data1: string, data2: string) {
+function swapNodes(list: IDoublyLinkedList, data1: any, data2: any) {
   console.log(`Swapping ${data1} and ${data2}:`);
 
   let node1Prev:NodeM|null = null;

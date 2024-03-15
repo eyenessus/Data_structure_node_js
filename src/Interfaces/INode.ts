@@ -1,5 +1,5 @@
 interface INode{
-    data: string;
+    data: any;
     next: INode | null;
     previous: INode | null;
     setNextNode(node: INode | null): void;

@@ -6,7 +6,7 @@ export class LinkedList implements ILinkedList{
     this.head = null;
   }
 
-  addToHead(data: string) {
+  addToHead(data: any) {
     const newHead:INode = new NodeM(data);
     const currentHead:INode | null = this.head;
     this.head = newHead;
@@ -15,7 +15,7 @@ export class LinkedList implements ILinkedList{
     }
   }
 
-  addToTail(data: string) {
+  addToTail(data: any) {
     let tail: INode | null = this.head;
     if (!tail) {
       this.head = new NodeM(data);

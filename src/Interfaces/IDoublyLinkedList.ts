@@ -7,5 +7,4 @@ interface IDoublyLinkedList{
     removeHead(): string | void;
     removeTail(): string | void;
     removeByData(data: string): INode | null;
-    swapNodes(list:IDoublyLinkedList,data1:string,data2:string) :INode| null;
 }
