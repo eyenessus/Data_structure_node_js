@@ -1,4 +1,4 @@
-class DoublyLinkedList implements DoublyLinkedList{
+class DoublyLinkedList implements DoublyLinkedList {
   head: NodeM | null;
   tail: NodeM | null;
 
@@ -8,8 +8,8 @@ class DoublyLinkedList implements DoublyLinkedList{
   }
 
   addToHead(data: string) {
-    const newHead:NodeM = new NodeM(data);
-    const currentHead:NodeM|null = this.head;
+    const newHead: NodeM = new NodeM(data);
+    const currentHead: NodeM | null = this.head;
     if (currentHead) {
       currentHead.setPreviousNode(newHead);
       newHead.setNextNode(currentHead);
@@ -58,6 +58,20 @@ class DoublyLinkedList implements DoublyLinkedList{
       this.removeHead()
     }
     return removedTail.data
+  }
+  removeByData(data: string) {
+    let nodeToRemove: NodeM | undefined;
+    let currentNode: NodeM | null = this.head;
+    while (currentNode) {
+      if (currentNode.data === data) {
+        nodeToRemove = currentNode;
+        break;
+      }
+      currentNode = currentNode.getNextNode();
+    }
+    if (!nodeToRemove) {
+      return null;
+    }
   }
 
   printList() {

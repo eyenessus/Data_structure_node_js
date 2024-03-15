@@ -3,6 +3,7 @@ interface DoublyLinkedList{
     tail: INode | null;
     addToHead(data: string): void;
     addToTail(data: string): void;
-    removeHead(): string | undefined;
-    removeTail(): string | undefined;
+    removeHead(): string | void;
+    removeTail(): string | void;
+    removeByData(data: string): null;
 }
