@@ -1,4 +1,4 @@
-class DoublyLinkedList {
+class DoublyLinkedList implements DoublyLinkedList{
   head: NodeM | null;
   tail: NodeM | null;
 

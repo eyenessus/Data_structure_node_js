@@ -2,6 +2,7 @@ class NodeM implements INode{
     data: string
     next: NodeM | null
     previous: NodeM | null
+    
     constructor(data: string) {
         this.data = data;
         this.next = null;
