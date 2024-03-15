@@ -12,6 +12,7 @@ export default class NodeM implements INode{
     setNextNode(node: INode | null) {
         if (node) {
             this.next = node;
+            return
         } 
         this.next = null;
     }

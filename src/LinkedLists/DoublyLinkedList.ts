@@ -1,6 +1,6 @@
 import NodeM from "../Node/NodeM";
 
-export default class DoublyLinkedList implements IDoublyLinkedList {
+export default class DoublyLinkedList {
   head: INode | null;
   tail: INode | null;
 
@@ -8,14 +8,10 @@ export default class DoublyLinkedList implements IDoublyLinkedList {
     this.head = null;
     this.tail = null;
   }
-  swapNodes(list: IDoublyLinkedList, data1: INode | null, data2: INode | null): INode | null {
-  
-    return null;
-  }
 
   addToHead(data: string) {
-    const newHead: INode = new NodeM(data);
-    const currentHead: INode | null = this.head;
+    const newHead = new NodeM(data);
+    const currentHead = this.head;
     if (currentHead) {
       currentHead.setPreviousNode(newHead);
       newHead.setNextNode(currentHead);
@@ -27,17 +23,20 @@ export default class DoublyLinkedList implements IDoublyLinkedList {
   }
 
   addToTail(data: string) {
-    const newTail: NodeM = new NodeM(data);
+    const newTail = new NodeM(data);
     const currentTail = this.tail;
-
-    if (currentTail && this.tail) {
-      this.tail.setNextNode(newTail)
+    if (currentTail) {
+      currentTail.setNextNode(newTail);
       newTail.setPreviousNode(currentTail);
+    }
+    this.tail = newTail;
+    if (!this.head) {
+      this.head = newTail;
     }
   }
 
   removeHead() {
-    const removedHead: INode | null = this.head;
+    const removedHead = this.head;
     if (!removedHead) {
       return;
     }
@@ -52,7 +51,7 @@ export default class DoublyLinkedList implements IDoublyLinkedList {
   }
 
   removeTail() {
-    const removedTail: NodeM | null = this.tail;
+    const removedTail = this.tail;
     if (!removedTail) {
       return;
     }
@@ -61,15 +60,15 @@ export default class DoublyLinkedList implements IDoublyLinkedList {
       this.tail.setNextNode(null);
     }
     if (removedTail === this.head) {
-      this.removeHead()
+      this.removeHead();
     }
-    return removedTail.data
+    return removedTail.data;
   }
 
   removeByData(data: string) {
-    let nodeToRemove: NodeM | undefined;
-    let currentNode: NodeM | null = this.head;
-    while (currentNode) {
+    let nodeToRemove;
+    let currentNode = this.head;
+    while (currentNode !== null) {
       if (currentNode.data === data) {
         nodeToRemove = currentNode;
         break;
@@ -84,10 +83,9 @@ export default class DoublyLinkedList implements IDoublyLinkedList {
     } else if (nodeToRemove === this.tail) {
       this.removeTail();
     } else {
-      const nextNode: NodeM|null= nodeToRemove.getNextNode();
-      const previousNode: NodeM|null = nodeToRemove.getPreviousNode();
-      
-      if(nextNode && previousNode){
+      const nextNode = nodeToRemove.getNextNode();
+      const previousNode = nodeToRemove.getPreviousNode();
+      if (nextNode && previousNode) {
         nextNode.setPreviousNode(previousNode);
         previousNode.setNextNode(nextNode);
       }
@@ -96,7 +94,7 @@ export default class DoublyLinkedList implements IDoublyLinkedList {
   }
 
   printList() {
-    let currentNode: NodeM | null = this.head;
+    let currentNode = this.head;
     let output = '<head> ';
     while (currentNode !== null) {
       output += currentNode.data + ' ';
@@ -106,6 +104,5 @@ export default class DoublyLinkedList implements IDoublyLinkedList {
     console.log(output);
   }
 }
-
 
 module.exports = DoublyLinkedList;

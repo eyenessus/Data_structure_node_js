@@ -1,15 +1,16 @@
 import DoublyLinkedList from "./DoublyLinkedList"
 
 const subway = new DoublyLinkedList()
-subway.addToHead('TimesSquare')
-subway.addToHead('GrandCentral')
-subway.addToHead('CentralPark')
-subway.addToTail('PennStation')
-subway.addToTail('WallStreet')
-subway.addToTail('BrooklynBridge')
-subway.printList()
-subway.removeHead()
-subway.removeTail()
-subway.printList()
-subway.removeByData('TimesSquare')
-subway.printList()
+subway.addToHead('TimesSquare');
+subway.addToHead('GrandCentral');
+subway.addToHead('CentralPark');
+
+subway.addToTail('PennStation');
+subway.addToTail('WallStreet');
+subway.addToTail('BrooklynBridge');
+
+// subway.removeHead();
+// subway.removeTail();
+
+// subway.removeByData('TimesSquare');
+subway.printList();
