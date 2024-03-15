@@ -1,4 +1,4 @@
-import DoublyLinkedList from "./DoublyLinkedList"
+import DoublyLinkedList from "../LinkedLists/DoublyLinkedList"
 
 const subway = new DoublyLinkedList()
 subway.addToHead('TimesSquare');
@@ -13,5 +13,6 @@ brazilSubway.addToHead('Santo amaro')
 brazilSubway.addToHead('Capão redondo')
 brazilSubway.addToTail('Vila das belezas')
 brazilSubway.addToTail('Santa cruz')
+brazilSubway.printList();
 
 // subway.swapNodes(brazilSubway,'google','pop')

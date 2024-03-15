@@ -12,9 +12,13 @@ export default class Queue implements IQueues {
     }
 
     enqueue(data: any) {
-        this.queue.addToTail(data)
+        if(this.hasRoom()){
+            this.queue.addToTail(data);
         this.size++;
-        console.log(`Added ${data}! Queue size is now ${this.size}.`);
+        console.log(`Added ${data} to queue! Queue size is now ${this.size}.`);
+        }else{
+          throw new Error("Queue is full!")
+        }
     }
 
 
