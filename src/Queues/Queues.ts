@@ -12,19 +12,19 @@ export default class Queue implements IQueues {
     }
 
     enqueue(data: any) {
-        if(this.hasRoom()){
+        if (this.hasRoom()) {
             this.queue.addToTail(data);
-        this.size++;
-        console.log(`Added ${data} to queue! Queue size is now ${this.size}.`);
-        }else{
-          throw new Error("Queue is full!")
+            this.size++;
+            console.log(`Added ${data} to queue! Queue size is now ${this.size}.`);
+        } else {
+            throw new Error("Queue is full!")
         }
     }
 
 
     dequeue() {
         if (!this.isEmpty()) {
-            const data = this.queue.removeHead();
+            const data: INode | void = this.queue.removeHead();
             this.size--;
             console.log(`Removed ${data} from queue! Queue size is now ${this.size}.`);
             return data;
