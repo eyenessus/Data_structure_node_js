@@ -41,7 +41,21 @@ class DoublyLinkedList {
       }
       return removedHead.data;
     }
-    
+    removeTail() {
+      const removedTail = this.tail;
+      if (!removedTail) {
+        return;
+      }
+      this.tail = removedTail.getPreviousNode();
+      if (this.tail) {
+        this.tail.setNextNode(null);
+      }
+      if(removedTail === this.head){
+        this.removeHead()
+      }
+      return removedTail.data
+    }
+  
     printList() {
         let currentNode = this.head;
         let output = '<head> ';
