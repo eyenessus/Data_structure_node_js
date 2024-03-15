@@ -5,5 +5,5 @@ interface DoublyLinkedList{
     addToTail(data: string): void;
     removeHead(): string | void;
     removeTail(): string | void;
-    removeByData(data: string): null;
+    removeByData(data: string): INode | null;
 }
