@@ -1,15 +1,21 @@
-class DoublyLinkedList implements IDoublyLinkedList {
-  head: NodeM | null;
-  tail: NodeM | null;
+import NodeM from "../Node/NodeM";
+
+export default class DoublyLinkedList implements IDoublyLinkedList {
+  head: INode | null;
+  tail: INode | null;
 
   constructor() {
     this.head = null;
     this.tail = null;
   }
+  swapNodes(list: IDoublyLinkedList, data1: INode | null, data2: INode | null): INode | null {
+  
+    return null;
+  }
 
   addToHead(data: string) {
-    const newHead: NodeM = new NodeM(data);
-    const currentHead: NodeM | null = this.head;
+    const newHead: INode = new NodeM(data);
+    const currentHead: INode | null = this.head;
     if (currentHead) {
       currentHead.setPreviousNode(newHead);
       newHead.setNextNode(currentHead);
@@ -31,7 +37,7 @@ class DoublyLinkedList implements IDoublyLinkedList {
   }
 
   removeHead() {
-    const removedHead: NodeM | null = this.head;
+    const removedHead: INode | null = this.head;
     if (!removedHead) {
       return;
     }
@@ -100,3 +106,6 @@ class DoublyLinkedList implements IDoublyLinkedList {
     console.log(output);
   }
 }
+
+
+module.exports = DoublyLinkedList;

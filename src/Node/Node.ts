@@ -1,3 +1,5 @@
+import NodeM from "./NodeM"
+
 const strawberryNode = new NodeM('Berry Tasty')
 const vanillaNode = new NodeM('Vanilla')
 const coconutNode = new NodeM('Coconuts for Coconut')
@@ -5,8 +7,9 @@ const coconutNode = new NodeM('Coconuts for Coconut')
 vanillaNode.setNextNode(strawberryNode)
 strawberryNode.setNextNode(coconutNode)
 
-let currentNode: NodeM | null = vanillaNode
+let currentNode: INode | null = vanillaNode
 
 while (currentNode !== null) {
+    console.log(currentNode)
     currentNode = currentNode.getNextNode()
 }

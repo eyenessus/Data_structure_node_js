@@ -1,7 +1,7 @@
-class NodeM implements INode{
+export default class NodeM implements INode{
     data: string
-    next: NodeM | null
-    previous: NodeM | null
+    next: INode | null
+    previous: INode | null
     
     constructor(data: string) {
         this.data = data;
@@ -9,20 +9,19 @@ class NodeM implements INode{
         this.previous = null;
     }
 
-    setNextNode(node: NodeM | null) {
-        if (node instanceof NodeM || node === null) {
+    setNextNode(node: INode | null) {
+        if (node) {
             this.next = node;
-        } else {
-            throw new Error('Next node must be a member of the Node class.');
-        }
+        } 
+        this.next = null;
     }
 
-    setPreviousNode(node: NodeM | null) {
-        if (node instanceof Node || node === null) {
+    setPreviousNode(node: INode | null) {
+        if (node) {
             this.previous = node;
-        } else {
-            throw new Error('Previous node must be a member of the Node class')
-        }
+            return 
+        } 
+        this.previous= null;
     }
 
     getNextNode() {
@@ -34,5 +33,3 @@ class NodeM implements INode{
     }
 }
 
-
-module.exports = NodeM;

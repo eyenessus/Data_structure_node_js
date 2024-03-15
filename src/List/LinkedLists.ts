@@ -1,12 +1,14 @@
- class LinkedList implements ILinkedList{
-  head: NodeM | null
+import NodeM from "../Node/NodeM";
+
+export class LinkedList implements ILinkedList{
+  head: INode | null
   constructor() {
     this.head = null;
   }
 
   addToHead(data: string) {
-    const newHead = new NodeM(data);
-    const currentHead = this.head;
+    const newHead:INode = new NodeM(data);
+    const currentHead:INode | null = this.head;
     this.head = newHead;
     if (currentHead) {
       this.head.setNextNode(currentHead);
@@ -14,7 +16,7 @@
   }
 
   addToTail(data: string) {
-    let tail: NodeM | null = this.head;
+    let tail: INode | null = this.head;
     if (!tail) {
       this.head = new NodeM(data);
     } else {
@@ -37,7 +39,7 @@
   }
 
   printList() {
-    let currentNode: null | NodeM = this.head;
+    let currentNode: null | INode = this.head;
     let output: string = "<head> ";
     
     while (currentNode !== null) {
