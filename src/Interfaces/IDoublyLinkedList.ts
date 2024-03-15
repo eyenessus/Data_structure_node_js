@@ -1,4 +1,4 @@
-interface DoublyLinkedList{
+interface IDoublyLinkedList{
     head: INode | null;
     tail: INode | null;
     addToHead(data: string): void;

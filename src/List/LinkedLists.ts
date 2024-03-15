@@ -1,4 +1,4 @@
- class LinkedList {
+ class LinkedList implements ILinkedList{
   head: NodeM | null
   constructor() {
     this.head = null;
