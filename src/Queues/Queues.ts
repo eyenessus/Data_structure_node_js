@@ -5,7 +5,7 @@ export default class Queue implements IQueues {
     size: number;
     maxSize: number;
 
-    constructor(maxSize:number=Infinity) {
+    constructor(maxSize: number = Infinity) {
         this.queue = new LinkedList()
         this.size = 0
         this.maxSize = maxSize
@@ -19,12 +19,16 @@ export default class Queue implements IQueues {
 
 
     dequeue() {
-        const data = this.queue.removeHead()
-        this.size--;
-        console.log(`Removed ${data}! Queue size is now ${this.size}.`);
-        return data;
+        if (!this.isEmpty()) {
+            const data = this.queue.removeHead();
+            this.size--;
+            console.log(`Removed ${data} from queue! Queue size is now ${this.size}.`);
+            return data;
+        } else {
+            throw new Error("Queue is empty!");
+        }
     }
-    
+
     hasRoom() {
         if (this.size < this.maxSize) {
             return true
