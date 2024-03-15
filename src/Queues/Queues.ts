@@ -3,9 +3,12 @@ import { LinkedList } from "../List/LinkedLists";
 export default class Queue implements IQueues {
     queue: ILinkedList;
     size: number;
-    constructor() {
+    maxSize: number;
+
+    constructor(maxSize:number=Infinity) {
         this.queue = new LinkedList()
         this.size = 0
+        this.maxSize = maxSize
     }
 
     enqueue(data: any) {
@@ -20,6 +23,20 @@ export default class Queue implements IQueues {
         this.size--;
         console.log(`Removed ${data}! Queue size is now ${this.size}.`);
         return data;
+    }
+    
+    hasRoom() {
+        if (this.size < this.maxSize) {
+            return true
+        }
+        return false
+    }
+
+    isEmpty() {
+        if (!this.size) {
+            return true
+        }
+        return false
     }
 }
 
