@@ -1,4 +1,4 @@
-class NodeM {
+class NodeM implements INode{
     data: string
     next: NodeM | null
     previous: NodeM | null
@@ -15,6 +15,7 @@ class NodeM {
             throw new Error('Next node must be a member of the Node class.');
         }
     }
+
     setPreviousNode(node: NodeM | null) {
         if (node instanceof Node || node === null) {
             this.previous = node;
