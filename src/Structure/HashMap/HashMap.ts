@@ -1,4 +1,4 @@
-class HashMap implements IHashMap{
+export default class HashMap implements IHashMap{
     private hashmap: Array<Number>;
 
     constructor(size=0){
