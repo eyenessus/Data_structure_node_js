@@ -1,4 +1,4 @@
-import DoublyLinkedList from "../LinkedLists/DoublyLinkedList"
+import DoublyLinkedList from "../Structure/LinkedLists/DoublyLinkedList"
 
 const subway = new DoublyLinkedList()
 subway.addToHead('TimesSquare');

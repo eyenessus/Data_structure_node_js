@@ -1,4 +1,4 @@
-import Queue from "../Queues/Queues";
+import Queue from "../Structure/Queues/Queues";
 
 const restaurantOrder = new Queue();
 // restaurantOrder.enqueue('apple pie');

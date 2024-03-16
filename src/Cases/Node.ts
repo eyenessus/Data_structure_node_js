@@ -1,4 +1,4 @@
-import NodeM from "../Node/NodeM"
+import NodeM from "../Structure/Node/NodeM"
 
 const strawberryNode = new NodeM('Berry Tasty')
 const vanillaNode = new NodeM('Vanilla')

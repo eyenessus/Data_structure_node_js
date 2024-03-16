@@ -1,4 +1,4 @@
-import { LinkedList } from "../List/LinkedLists";
+import { LinkedList } from "../Structure/List/LinkedLists";
 
 const seasons = new LinkedList();
 seasons.printList();

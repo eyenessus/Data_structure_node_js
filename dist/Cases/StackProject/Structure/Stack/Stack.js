@@ -1,9 +1,12 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const LinkedLists_1 = require("../List/LinkedLists");
+const DoublyLinkedList_1 = __importDefault(require("../LinkedLists/DoublyLinkedList"));
 class Stack {
     constructor(maxSize = Infinity) {
-        this.stack = new LinkedLists_1.LinkedList();
+        this.stack = new DoublyLinkedList_1.default();
         this.maxSize = maxSize;
         this.size = 0;
     }
