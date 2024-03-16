@@ -1,5 +1,6 @@
 import HashMap from "../Structure/HashMap/HashMap";
 
-const myHashMap = new HashMap(3);
-console.log(myHashMap.hash('id'));
-console.log(myHashMap.hash('id'));
+
+const employees = new HashMap(3);
+employees.assign('34-567', 'Mara');
+console.log(employees.hashmap);
