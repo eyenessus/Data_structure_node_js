@@ -18,4 +18,9 @@ export default class HashMap implements IHashMap {
         const arrayIndex = this.hash(key);
         this.hashmap[arrayIndex] = value;
     }
+
+    retrieve(key: string){
+        const arrayIndex = this.hash(key)
+        return this.hashmap[arrayIndex];
+      }
 }
