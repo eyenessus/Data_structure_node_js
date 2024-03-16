@@ -36,8 +36,8 @@ export default class HashMap implements IHashMap {
             }
 
             if (!current.getNextNode()) {
-                const newNode: NodeM = new NodeM({ key, value });
-                current.setNextNode(newNode);
+                const tail: NodeM = new NodeM({ key, value });
+                current.setNextNode(tail);
                 break;
             }
             current = current.getNextNode();
@@ -56,3 +56,8 @@ export default class HashMap implements IHashMap {
         return null
     }
 }
+
+/**
+ * depois cria sondagem de colisão
+ * intervalo de adicao que se caso ja existir um dado no tal indice ele procura entre um intervalo de 2 (exemplo) [3,0,0,1,0] //1 ja contem o valor entao ele pula duas casas e adiciona o valor 3 na proxima casa vazia
+ */
