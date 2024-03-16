@@ -1,9 +1,13 @@
+import { LinkedList } from "../List/LinkedLists";
+import NodeM from "../Node/NodeM";
+
 export default class HashMap implements IHashMap {
-    hashmap: Array<Number>;
+    hashmap: Array<ILinkedList>;
 
     constructor(size = 0) {
         this.hashmap = new Array(size)
             .fill(null)
+            .map(() => new LinkedList());
     }
 
     hash(key: string) {
@@ -16,11 +20,16 @@ export default class HashMap implements IHashMap {
 
     assign(key: string, value: any) {
         const arrayIndex = this.hash(key);
-        this.hashmap[arrayIndex] = value;
+        const linkedList = this.hashmap[arrayIndex];
+
+        if (linkedList.head === null) {
+            linkedList.addToHead({ key: key, value: value });
+            return;
+        }
     }
 
-    retrieve(key: string){
+    retrieve(key: string) {
         const arrayIndex = this.hash(key)
         return this.hashmap[arrayIndex];
-      }
+    }
 }

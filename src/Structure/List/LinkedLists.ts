@@ -9,6 +9,7 @@ export class LinkedList implements ILinkedList{
   addToHead(data: any) {
     const newHead:INode = new NodeM(data);
     const currentHead:INode | null = this.head;
+
     this.head = newHead;
     if (currentHead) {
       this.head.setNextNode(currentHead);
