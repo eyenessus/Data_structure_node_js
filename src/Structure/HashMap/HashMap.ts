@@ -23,8 +23,24 @@ export default class HashMap implements IHashMap {
         const linkedList = this.hashmap[arrayIndex];
 
         if (linkedList.head === null) {
-            linkedList.addToHead({ key: key, value: value });
+            linkedList.addToHead({ key, value });
             return;
+        }
+
+        let current: NodeM | null = linkedList.head;
+
+        while (current) {
+            
+            if (current.data.key === key) {
+                current.data = { key, value };
+            }
+
+            if (!current.getNextNode()) {
+                const newNode: NodeM = new NodeM({ key, value });
+                current.setNextNode(newNode);
+                break;
+            }
+            current = current.getNextNode();
         }
     }
 
