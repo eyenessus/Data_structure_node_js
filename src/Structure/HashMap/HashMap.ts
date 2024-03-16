@@ -30,7 +30,7 @@ export default class HashMap implements IHashMap {
         let current: NodeM | null = linkedList.head;
 
         while (current) {
-            
+
             if (current.data.key === key) {
                 current.data = { key, value };
             }
@@ -43,9 +43,16 @@ export default class HashMap implements IHashMap {
             current = current.getNextNode();
         }
     }
-
     retrieve(key: string) {
-        const arrayIndex = this.hash(key)
-        return this.hashmap[arrayIndex];
+        const arrayIndex: number = this.hash(key);
+        let current: NodeM | null = this.hashmap[arrayIndex].head;
+
+        while (current) {
+            if (current.data.key === key) {
+                return current.data.value;
+            }
+            current = current.getNextNode()
+        }
+        return null
     }
 }
