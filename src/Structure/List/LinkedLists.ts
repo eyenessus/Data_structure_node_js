@@ -1,14 +1,14 @@
 import NodeM from "../Node/NodeM";
 
-export class LinkedList implements ILinkedList{
+export class LinkedList implements ILinkedList {
   head: INode | null
   constructor() {
     this.head = null;
   }
 
   addToHead(data: any) {
-    const newHead:INode = new NodeM(data);
-    const currentHead:INode | null = this.head;
+    const newHead: INode = new NodeM(data);
+    const currentHead: INode | null = this.head;
 
     this.head = newHead;
     if (currentHead) {
@@ -42,7 +42,7 @@ export class LinkedList implements ILinkedList{
   printList() {
     let currentNode: null | INode = this.head;
     let output: string = "<head> ";
-    
+
     while (currentNode !== null) {
       output += currentNode.data + " ";
       currentNode = currentNode.getNextNode();
@@ -50,5 +50,28 @@ export class LinkedList implements ILinkedList{
     output += "<tail>";
     console.log(output);
   }
+
+  findNodeIteratively(data: any) {
+    let currentNode: NodeM | null = this.head;
+    while (currentNode !== null) {
+      if (currentNode.data === data) {
+        return currentNode;
+      }
+      currentNode = currentNode.next;
+    }
+    return null;
+  }
+
+  findNodeRecursively(data: NodeM, currentNode = this.head): any {
+    if (currentNode === null) {
+      return null;
+    } else if (currentNode.data === data) {
+      return currentNode;
+    } else {
+      return this.findNodeRecursively(data, currentNode.next);
+    }
+
+  }
+
 }
 
