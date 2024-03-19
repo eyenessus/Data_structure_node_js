@@ -17,7 +17,7 @@ class TreeNode {
   }
   removeChild(childToRemove: any | NodeM) {
     const length = this.children.length;
-    
+
     this.children = this.children.filter(child => {
       if (childToRemove instanceof TreeNode) {
         return childToRemove !== child;
@@ -29,5 +29,9 @@ class TreeNode {
     if (length === this.children.length) {
       this.children.forEach(child => child.removeChild(childToRemove));
     }
+  }
+  depthFirstTraversal() {
+    console.log(this.data);
+    this.children.forEach(child => child.depthFirstTraversal());
   }
 };
