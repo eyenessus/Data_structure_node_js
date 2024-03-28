@@ -46,4 +46,19 @@ console.log(node);
 node = bt.getNodeByValue(55);
 console.log(node);
 
+const randomize = () => Math.floor(Math.random() * 40);
+let numbers = [];
+
+for (let i = 0; i < 10; i++) {
+  numbers.push(randomize());
+  bt.insert(numbers[i]);
+}
+
+console.log(`Inserted [ ${numbers} ] to binary tree`);
+
+console.log('Depth First Traversal');
+bt.depthFirstTraversal();
+
+
 module.exports = binarySearch;
+
