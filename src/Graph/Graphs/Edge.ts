@@ -1,5 +1,10 @@
+import { Vertex } from "./Vertex";
+
 export class Edge {
-    constructor(start, end, weight = null) {
+    start:Vertex;
+    end:Vertex;
+    weight:number|null;
+    constructor(start:Vertex, end:Vertex, weight:number|null) {
       this.start = start;
       this.end = end;
       this.weight = weight;
