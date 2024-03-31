@@ -20,7 +20,14 @@ export class Graph {
       throw new Error('Expected Vertex arguments.');
     }
   }
-
+  removeEdge(vertexOne, vertexTwo){
+    if (vertexOne instanceof Vertex && vertexTwo instanceof Vertex) {
+         vertexOne.removeEdge(vertexTwo);
+         vertexTwo.removeEdge(vertexOne);
+       } else {
+         throw new Error('Expected Vertex arguments.');
+       }
+   }
 
   print() {
     this.vertices.forEach((vertex) => vertex.print());
