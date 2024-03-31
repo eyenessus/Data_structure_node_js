@@ -4,10 +4,12 @@ import { Vertex } from "./Vertex";
 export class Graph {
   isWeighted:boolean;
   vertices: Vertex[] = [];
+  isDirected:boolean;
 
-  constructor(isWeighted=false) {
+  constructor(isWeighted=false,isDirected=false) {
     this.vertices = [];
     this.isWeighted = isWeighted
+    this.isDirected = isDirected
   }
   addVertex(data:string) {
     const newVertex = new Vertex(data);
@@ -20,20 +22,28 @@ export class Graph {
 
     if (vertexOne instanceof Vertex && vertexTwo instanceof Vertex) {
       vertexOne.addEdge(vertexTwo, edgeWeight);
-      vertexTwo.addEdge(vertexOne, edgeWeight);
+
+      if (!this.isDirected) {
+        vertexTwo.addEdge(vertexOne, edgeWeight);
+      }
     } else {
       throw new Error('Expected Vertex arguments.');
     }
   }
-  removeEdge(vertexOne:Vertex, vertexTwo:Vertex){
-    if (vertexOne instanceof Vertex && vertexTwo instanceof Vertex) {
-         vertexOne.removeEdge(vertexTwo);
-         vertexTwo.removeEdge(vertexOne);
-       } else {
-         throw new Error('Expected Vertex arguments.');
-       }
-   }
 
+  removeEdge(vertexOne:Vertex, vertexTwo:Vertex) {
+    if (vertexOne instanceof Vertex && vertexTwo instanceof Vertex) {
+      vertexOne.removeEdge(vertexTwo);
+
+      if (!this.isDirected) {
+        vertexTwo.removeEdge(vertexOne);
+      }
+    } else {
+      throw new Error('Expected Vertex arguments.');
+    }
+  }
+
+ 
   print() {
     this.vertices.forEach((vertex) => vertex.print());
   }
