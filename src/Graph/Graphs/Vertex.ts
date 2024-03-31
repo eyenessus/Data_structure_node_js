@@ -9,7 +9,7 @@ export class Vertex {
         if (vertex instanceof Vertex) {
           this.edges.push(new Edge(this, vertex));
         } else {
-          throw new Error("Edge start and end must both be Vertex");
+          throw new Error('Edge start and end must both be Vertex');
         }
       }
       print() {
