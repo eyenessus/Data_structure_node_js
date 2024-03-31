@@ -15,8 +15,13 @@ export class Graph {
       print() {
         this.vertices.forEach((vertex) => vertex.print());
       }
+
+      removeVertex(vertex){
+        this.vertices = this.vertices.filter(e => e!== vertex)
+      }
     }
     const trainNetwork = new Graph();
     let atlantaStation = trainNetwork.addVertex("Atlanta");
     let newYorkStation = trainNetwork.addVertex("New York");
+    trainNetwork.removeVertex(atlantaStation)
     trainNetwork.print();
